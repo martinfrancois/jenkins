@@ -1,6 +1,7 @@
 FROM jenkins/jenkins
  
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+ENV JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="
  
 COPY security.groovy /usr/share/jenkins/ref/init.groovy.d/security.groovy
  
