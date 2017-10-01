@@ -16,3 +16,6 @@ secrets:
     external: true
   jenkins-pass:
     external: true
+   
+environment:
+      - JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="
