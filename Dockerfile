@@ -14,7 +14,4 @@ USER root
 # Add custom packages
 RUN apt-get update && apt-get install -y nano rpl
 
-# Needed to display JavaDoc correctly: https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy
-RUN rpl -i -w 'JAVA_ARGS="-Djava.awt.headless=true"' 'JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=' /etc/default/jenkins
-
 USER jenkins

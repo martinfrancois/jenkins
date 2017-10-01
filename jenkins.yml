@@ -10,12 +10,12 @@ services:
     secrets:
       - jenkins-user
       - jenkins-pass
-    environment:
-      - JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="
     volumes:
       - type: volume
         source: jenkins_home
         target: /var/jenkins_home
+    command: rpl -i -w 'JAVA_ARGS="-Djava.awt.headless=true"' 'JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=' /etc/default/jenkins
+    # Needed to display JavaDoc correctly: https://wiki.jenkins.io/display/JENKINS/Configuring+Content+Security+Policy
 
 secrets:
   jenkins-user:
