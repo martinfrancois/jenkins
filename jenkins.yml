@@ -10,12 +10,11 @@ services:
     secrets:
       - jenkins-user
       - jenkins-pass
- 
+    environment:
+      - JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="
+
 secrets:
   jenkins-user:
     external: true
   jenkins-pass:
     external: true
-   
-environment:
-      - JAVA_ARGS="-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP="
